@@ -1,0 +1,20 @@
+.logo{ 
+    width: 80px;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1em 20em;
+    background-color: var(--preto);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}	
