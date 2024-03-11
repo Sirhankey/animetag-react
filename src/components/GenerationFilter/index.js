@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './GenerationFilter.module.css';
+import { Button, ButtonGroup } from 'reactstrap';
 
 function GenerationFilter({ onChange }) {
     const generations = [
@@ -29,7 +30,7 @@ function GenerationFilter({ onChange }) {
         <div className={styles.container}>
             {generations.map(gen => (
                 <div key={gen.id}>
-                    <label className={styles.label}>
+                    {/* <label className={styles.label}>
                         <input
                             type="radio"
                             name="generation"
@@ -37,9 +38,20 @@ function GenerationFilter({ onChange }) {
                             onChange={handleGenerationChange}
                         />
                         {gen.label}
-                    </label>
+                    </label> */}
+
+                    <ButtonGroup className="my-2"
+                        size="sm">
+                        <Button
+                            color="primary"
+                            outline
+                            onClick={() => handleGenerationChange({ target: { value: gen.id } })}>
+                            {gen.label}
+                        </Button>
+                    </ButtonGroup>
                 </div>
             ))}
+
         </div>
     );
 }

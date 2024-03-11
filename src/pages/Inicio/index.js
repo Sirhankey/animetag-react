@@ -48,7 +48,7 @@ function Inicio() {
         const minId = 1;
         const maxId = 151;
         console.log('filteredList:', filteredList);
-        filteredList = filteredList.filter(pokemon => pokemon.id >= minId && pokemon.id <= maxId);
+        filteredList = filteredList.filter(pokemon => (pokemon && pokemon.id) && (pokemon.id >= minId && pokemon.id <= maxId));
         setFilteredPokemonList(filteredList);
     }
 
@@ -106,12 +106,12 @@ function Inicio() {
         if (filteredList.length > 0 && minId && maxId) {
             // Filtra por geração
             // console.log(minId, maxId);
-            filteredList = filteredList.filter(pokemon => pokemon.id >= minId && pokemon.id <= maxId);
+            filteredList = filteredList.filter(pokemon => pokemon && pokemon.id >= minId && pokemon.id <= maxId);
             // console.log(filteredList);
         }
         if (name) {
             // Filtra por nome
-            filteredList = filteredList.filter(pokemon => pokemon.name.toLowerCase().includes(name.toLowerCase()));
+            filteredList = filteredList.filter(pokemon => pokemon && pokemon.name.toLowerCase().includes(name.toLowerCase()));
         }
         // Define a lista filtrada
         setFilteredPokemonList(filteredList);
@@ -128,7 +128,7 @@ function Inicio() {
             </Container>
             <div>
                 {isLoading ? <LoadingSpinner /> : <section className={styles.container}>
-                    {filteredPokemonList ? filteredPokemonList.map((pokemon) => (
+                    {filteredPokemonList.length > 0 ? filteredPokemonList.map((pokemon) => (
                         <Card {...pokemon} key={pokemon.id} />
                     )) : null}
                 </section>}

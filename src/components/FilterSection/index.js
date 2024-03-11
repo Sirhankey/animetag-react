@@ -17,6 +17,7 @@ function FilterSection({ onFilterChange }) {
 
     const handleNameChange = (event) => {
         const enteredName = event.target.value;
+        console.log('enteredName:', enteredName);
         setNameFilter(enteredName);
         // Passa a informação do filtro para o componente pai
         onFilterChange({ generation: generationFilter, name: enteredName });

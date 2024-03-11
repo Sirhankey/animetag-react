@@ -26,11 +26,11 @@ function AppRoutes() {
     return (
         <BrowserRouter>
             <Cabecalho />
-            <Container>
-                <UsuarioProvider>
-                    <FavoritosProvider>
-                        <PokemonListProvider>
-                            <ThemeProvider theme={theme}>
+            <UsuarioProvider>
+                <FavoritosProvider>
+                    <PokemonListProvider>
+                        <ThemeProvider theme={theme}>
+                            <Container>
                                 <Routes>
                                     <Route
                                         path="/login"
@@ -39,14 +39,14 @@ function AppRoutes() {
                                     <>
                                         <Route path="/" element={loggedIn ? <Inicio /> : <Navigate to="/login" />} />
                                         <Route path="/favoritos" element={loggedIn ? <Favoritos /> : <Navigate to="/login" />} />
-                                        <Route path="/:id" element={loggedIn ? <Pokemon /> : <Navigate to="/login" />} />
                                     </>
+                                    <Route path="/:id" element={loggedIn ? <Pokemon /> : <Navigate to="/login" />} />
                                 </Routes>
-                            </ThemeProvider>
-                        </PokemonListProvider>
-                    </FavoritosProvider>
-                </UsuarioProvider>
-            </Container>
+                            </Container>
+                        </ThemeProvider>
+                    </PokemonListProvider>
+                </FavoritosProvider>
+            </UsuarioProvider>
             <Rodape />
         </BrowserRouter>
     );

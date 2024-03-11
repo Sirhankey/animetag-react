@@ -1,16 +1,19 @@
 import React from 'react';
 import styles from './NameFilter.module.css';
+import { Input, Label } from 'reactstrap';
 
 function NameFilter({ onChange }) {
     return (
         <div className={styles.name}>
-            <label htmlFor="pokemonName">Search by name:</label>
-            <input
-                type="text"
+            <Label for="exampleEmail">
+                Pokemon Name
+            </Label>
+            <Input
                 id="pokemonName"
                 name="pokemonName"
+                placeholder="Enter a Pokémon name"
+                type="text"
                 onChange={onChange}
-                placeholder="Enter Pokémon name"
             />
         </div>
     );

@@ -2,6 +2,10 @@
     display: flex;
     justify-content: center;
     background-color: var(--preto);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
 }
 
 .rodape h2 {
