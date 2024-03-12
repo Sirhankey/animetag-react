@@ -1,5 +1,11 @@
-.container { 
+.container {
    display: flex;
    justify-content: space-around;
    flex-wrap: wrap;
+}
+
+.darkMode {
+   display: flex;
+   justify-content: flex-start;
+   margin-left: 5rem;
 }

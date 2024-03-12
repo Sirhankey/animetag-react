@@ -23,6 +23,16 @@ body {
   height: 100%;
 }
 
+.light-mode {
+  background-color: var(--branco);
+  color: var(--preto);
+}
+
+.dark-mode {
+  background-color: var(--preto);
+  color: var(--branco);
+}
+
 .Container {
   flex: 1;
 }

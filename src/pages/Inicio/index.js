@@ -8,6 +8,8 @@ import FilterSection from "components/FilterSection";
 import Container from "components/Container";
 import LoadingSpinner from "components/Loading";
 import { usePokemonListContext } from "contextos/PokemonList";
+import DarkModeComponent from "components/DarkMode";
+import DarkMode from "components/DarkMode";
 
 
 function Inicio() {
@@ -121,8 +123,11 @@ function Inicio() {
         <>
             <Banner imagem="home" />
             <Titulo>
-                <h1>Um lugar teste</h1>
+                <h1>Escolha seu Pokemon!</h1>
             </Titulo>
+            <div className={styles.darkMode}>
+                <DarkMode />
+            </div>
             <Container>
                 <FilterSection onFilterChange={handleFilterChange} />
             </Container>
