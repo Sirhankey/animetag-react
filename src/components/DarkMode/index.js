@@ -19,7 +19,9 @@ function DarkMode() {
 
     return (
         <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-            <Button color="primary"onClick={toggleDarkMode}>
+            <Button 
+            color={darkMode ? 'light' : 'dark'}
+            onClick={toggleDarkMode}>
                     {darkMode ? 'Light' : 'Dark'}
             </Button>
 

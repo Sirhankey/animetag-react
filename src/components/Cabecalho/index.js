@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from './logo.png';
 import styles from './Cabecalho.module.css';
 import CabecalhoLink from 'components/CabecalhoLink';
+import Logout from 'components/Logout';
 
 function Cabecalho() {
+    const location = useLocation();
     return (
         <header className={styles.cabecalho}>
             <Link to="./">
@@ -16,7 +18,7 @@ function Cabecalho() {
                 <CabecalhoLink url="./Favoritos">
                     Favoritos
                 </CabecalhoLink>
-                {/* <Logout></Logout> */}
+                {location.pathname !== '/login' && <Logout />}
             </nav>
         </header>
     )
