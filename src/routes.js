@@ -17,7 +17,7 @@ function AppRoutes() {
     const [loggedIn, setLoggedIn] = useState(false);
 
     const handleLogin = (onLogin) => {
-        console.log('handleLogin', onLogin);
+        // console.log('handleLogin', onLogin);
         if (onLogin) {
             setLoggedIn(true);
         }

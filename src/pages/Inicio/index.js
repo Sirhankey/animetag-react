@@ -34,7 +34,7 @@ function Inicio() {
                     if (filteredPokemonList.length === 0) {
                         defaultList(pokemonListWithData);
                     }
-                    console.log('pokemonListWithData:', pokemonListWithData);
+                    // console.log('pokemonListWithData:', pokemonListWithData);
                     setIsLoading(false);
                 }
 
@@ -49,7 +49,7 @@ function Inicio() {
     function defaultList(filteredList) {
         const minId = 1;
         const maxId = 151;
-        console.log('filteredList:', filteredList);
+        // console.log('filteredList:', filteredList);
         filteredList = filteredList.filter(pokemon => (pokemon && pokemon.id) && (pokemon.id >= minId && pokemon.id <= maxId));
         setFilteredPokemonList(filteredList);
     }
@@ -104,7 +104,7 @@ function Inicio() {
         const { minId, maxId } = generation;
         // Aplica os filtros à lista de Pokémon
         let filteredList = pokemonListWithData;
-        console.log('filteredList:', filteredList);
+        // console.log('filteredList:', filteredList);
         if (filteredList.length > 0 && minId && maxId) {
             // Filtra por geração
             // console.log(minId, maxId);

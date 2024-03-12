@@ -19,13 +19,13 @@ function Favoritos() {
                     let timestampMaisAlto = 0;
 
                     Object.values(data).forEach((favorito) => {
-                        console.log('favorito:', favorito);
+                        // console.log('favorito:', favorito);
                         if (favorito.timeStamp > timestampMaisAlto) {
                             timestampMaisAlto = favorito.timeStamp;
                             favoritoMaisRecente = favorito;
                         }
                     });
-                    console.log('favoritoMaisRecente:', favoritoMaisRecente);
+                    // console.log('favoritoMaisRecente:', favoritoMaisRecente);
                     setFavorito(favoritoMaisRecente.favorito);
                 } else {
                     setFavorito([]);
