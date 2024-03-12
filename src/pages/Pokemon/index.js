@@ -5,6 +5,7 @@ import { getPokemonByName } from 'services/pokemonService';
 import { useState, useEffect } from 'react';
 import styles from './Pokemon.module.css';
 import { Badge } from 'reactstrap';
+import NaoEncontrada from 'pages/NaoEncontrada';
 
 function Pokemon() {
     const parametros = useParams();
@@ -13,6 +14,9 @@ function Pokemon() {
 
     useEffect(() => {
         getPokemonByName(parametros.id).then((response) => {
+            if (response === undefined) {
+                return <NaoEncontrada />;
+            }
             setPokemon(response);
 
             // Obtém o nome do tipo do primeiro tipo do Pokémon
@@ -32,7 +36,7 @@ function Pokemon() {
             <Titulo>
                 <h1>PokeDex</h1>
             </Titulo>
-            <section className={styles.container} style={{ backgroundImage: backgroundImage, backgroundSize: 'cover'  }}>
+            <section className={styles.container} style={{ backgroundImage: backgroundImage, backgroundSize: 'cover' }}>
                 <div className={styles.pokemon}>
                     <div>
                         <img className={styles.pokemon__img} src={pokemon.sprites?.front_default} alt={pokemon.name} />
@@ -41,13 +45,13 @@ function Pokemon() {
                         <h2>{pokemon.name}</h2>
                         <p>Height: {pokemon.height}</p>
                         <p>Weight: {pokemon.weight}</p>
-                        <p>Types:  
+                        <p>Types:
                             {/* Mapeia os tipos do Pokémon e renderiza Badges para cada tipo */}
                             {pokemon.types?.map((type, index) => (
-                                <Badge 
+                                <Badge
                                     color='secondary'
-                                    pill 
-                                    key={index} 
+                                    pill
+                                    key={index}
                                     className={styles.badge}
                                 >
                                     {type.type.name}
