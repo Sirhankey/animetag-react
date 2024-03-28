@@ -13,6 +13,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'theme';
 import { PokemonListProvider } from 'contextos/PokemonList';
 import NaoEncontrada from 'pages/NaoEncontrada';
+import Battlefield from 'pages/Battlefield';
 
 function AppRoutes() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -42,6 +43,7 @@ function AppRoutes() {
                                         <Route path="/favoritos" element={loggedIn ? <Favoritos /> : <Navigate to="/login" />} />
                                     </>
                                     <Route path="/:id" element={loggedIn ? <Pokemon /> : <Navigate to="/login" />} />
+                                    <Route path="/battle" element={loggedIn ? <Battlefield /> : <Navigate to="/login" />} />
                                     <Route path="*" element={<NaoEncontrada />} />
                                 </Routes>
                             </Container>

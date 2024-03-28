@@ -8,7 +8,6 @@ import FilterSection from "components/FilterSection";
 import Container from "components/Container";
 import LoadingSpinner from "components/Loading";
 import { usePokemonListContext } from "contextos/PokemonList";
-import DarkModeComponent from "components/DarkMode";
 import DarkMode from "components/DarkMode";
 
 
