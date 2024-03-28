@@ -1,0 +1,132 @@
+.container {
+    background: url('/public/imagens/battleground') no-repeat center center fixed;
+    height: 80vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.enemy_side {
+    height: 50%;
+    border: 1px solid black;
+    display: flex;
+}
+
+.r_enemy_side {
+    height: 100%;
+    width: 50%;
+    border: 1px solid blue;
+}
+
+.l_enemy_side {
+    height: 100%;
+    width: 50%;
+    border: 1px solid green;
+}
+
+.player_side {
+    display: flex;
+    height: 50%;
+    border: 1px solid red;
+}
+
+.r_player_side {
+    height: 100%;
+    width: 50%;
+    border: 1px solid yellow;
+}
+
+.l_player_side {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    border: 1px solid orange;
+}
+
+.pokemon_name {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pokemon_img{
+    height: 50%;
+}
+
+.pokemon_stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 5px;
+    gap: 5px;
+    height: 50%;
+    width: 100%;
+    border: 1px solid black;
+
+}
+
+.button_wrapper {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}	
+
+.atck_button {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* font-size: 16px; */
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    /* border-radius: 50%; */
+
+}
+
+.atck_img:hover {
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+.atck_img {
+    height: 50px;
+    width: 50px;
+}
+
+.player_pokemon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+
+}
+
+.player_pkmns {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    border: 1px solid black;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
