@@ -17,6 +17,7 @@
     height: 100%;
     width: 50%;
     border: 1px solid blue;
+
 }
 
 .l_enemy_side {
@@ -65,7 +66,6 @@
     height: 50%;
     width: 100%;
     border: 1px solid black;
-
 }
 
 .button_wrapper {
@@ -100,7 +100,7 @@
     width: 50px;
 }
 
-.player_pokemon{
+.player_pokemon, .enemy_pokemon{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -108,7 +108,6 @@
     height: 100%;
     width: 100%;
     border: 1px solid black;
-
 }
 
 .player_pkmns {
@@ -120,6 +119,20 @@
     height: 100%;
     width: 50%;
     border: 1px solid black;
+}
+
+.enemy_pkmns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    border: 1px solid black;
+}
+
+.enemy_pkmn {
+    filter: brightness(0);
 }
 
 @keyframes spin {

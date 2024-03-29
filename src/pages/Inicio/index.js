@@ -9,12 +9,13 @@ import Container from "components/Container";
 import LoadingSpinner from "components/Loading";
 import { usePokemonListContext } from "contextos/PokemonList";
 import DarkMode from "components/DarkMode";
+import { usePokemonListWithDataContext } from "contextos/PokemonListWithData";
 
 
 function Inicio() {
-    const [pokemonListWithData, setPokemonListWithData] = useState([]);
-    const [filteredPokemonList, setFilteredPokemonList] = useState(pokemonListWithData);
+    const [filteredPokemonList, setFilteredPokemonList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const { pokemonListWithData, setPokemonListWithData } = usePokemonListWithDataContext();
     const { pokemonList, setPokemonList } = usePokemonListContext();
     useEffect(() => {
         async function fetchData() {

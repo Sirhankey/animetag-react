@@ -8,7 +8,7 @@ import { auth, db } from 'infra/firebase';
 import { useEffect } from 'react';
 
 function Favoritos() {
-    const { favorito, adicionarFavorito, setFavorito } = useFavoritosContext();
+    const { favorito, setFavorito } = useFavoritosContext();
 
     useEffect(() => {
         const getFromDatabase = async () => {
@@ -48,6 +48,7 @@ function Favoritos() {
                     <Card key={item.id} {...item} />
                 )) : null}
             </section>
+            <br/><br/>
 
         </>
     )

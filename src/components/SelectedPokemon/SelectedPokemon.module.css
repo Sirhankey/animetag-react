@@ -1,0 +1,59 @@
+.player_pokemon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.pokemon_name {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pokemon_img{
+    height: 50%;
+}
+
+.pokemon_stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 5px;
+    gap: 5px;
+    height: 50%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.button_wrapper {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}	
+
+.atck_button {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.atck_img:hover {
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+.atck_img {
+    height: 50px;
+    width: 50px;
+}

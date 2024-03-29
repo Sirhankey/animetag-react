@@ -14,6 +14,7 @@ import theme from 'theme';
 import { PokemonListProvider } from 'contextos/PokemonList';
 import NaoEncontrada from 'pages/NaoEncontrada';
 import Battlefield from 'pages/Battlefield';
+import { PokemonListWithDataProvider } from 'contextos/PokemonListWithData';
 
 function AppRoutes() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -31,23 +32,26 @@ function AppRoutes() {
             <UsuarioProvider>
                 <FavoritosProvider>
                     <PokemonListProvider>
-                        <ThemeProvider theme={theme}>
-                            <Container>
-                                <Routes>
-                                    <Route
-                                        path="/login"
-                                        element={!loggedIn ? <Login onLogin={handleLogin} /> : <Navigate to="/" />}
-                                    />
-                                    <>
-                                        <Route path="/" element={loggedIn ? <Inicio /> : <Navigate to="/login" />} />
-                                        <Route path="/favoritos" element={loggedIn ? <Favoritos /> : <Navigate to="/login" />} />
-                                    </>
-                                    <Route path="/:id" element={loggedIn ? <Pokemon /> : <Navigate to="/login" />} />
-                                    <Route path="/battle" element={loggedIn ? <Battlefield /> : <Navigate to="/login" />} />
-                                    <Route path="*" element={<NaoEncontrada />} />
-                                </Routes>
-                            </Container>
-                        </ThemeProvider>
+                        <PokemonListWithDataProvider>
+
+                            <ThemeProvider theme={theme}>
+                                <Container>
+                                    <Routes>
+                                        <Route
+                                            path="/login"
+                                            element={!loggedIn ? <Login onLogin={handleLogin} /> : <Navigate to="/" />}
+                                        />
+                                        <>
+                                            <Route path="/" element={loggedIn ? <Inicio /> : <Navigate to="/login" />} />
+                                            <Route path="/favoritos" element={loggedIn ? <Favoritos /> : <Navigate to="/login" />} />
+                                        </>
+                                        <Route path="/:id" element={loggedIn ? <Pokemon /> : <Navigate to="/login" />} />
+                                        <Route path="/battle" element={loggedIn ? <Battlefield /> : <Navigate to="/login" />} />
+                                        <Route path="*" element={<NaoEncontrada />} />
+                                    </Routes>
+                                </Container>
+                            </ThemeProvider>
+                        </PokemonListWithDataProvider>
                     </PokemonListProvider>
                 </FavoritosProvider>
             </UsuarioProvider>
