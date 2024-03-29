@@ -70,7 +70,7 @@ function Battlefield() {
                                 </span>
                                 <img
                                     className={styles.pokemon_img}
-                                    src={selectedEnemyPokemon.sprites.front_default}
+                                    src={selectedEnemyPokemon.sprites.other.showdown.front_default}
                                     alt={selectedEnemyPokemon.name}
                                 />
                                 <div className={styles.pokemon_stats}>
