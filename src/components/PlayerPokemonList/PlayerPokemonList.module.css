@@ -1,0 +1,20 @@
+.player_pkmns {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    border: 1px solid black;
+}
+
+.player_pokemon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+}
