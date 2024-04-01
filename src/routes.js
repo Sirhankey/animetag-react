@@ -15,6 +15,7 @@ import { PokemonListProvider } from 'contextos/PokemonList';
 import NaoEncontrada from 'pages/NaoEncontrada';
 import Battlefield from 'pages/Battlefield';
 import { PokemonListWithDataProvider } from 'contextos/PokemonListWithData';
+import PokeWho from 'pages/PokeWho';
 
 function AppRoutes() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -47,6 +48,7 @@ function AppRoutes() {
                                         </>
                                         <Route path="/:id" element={loggedIn ? <Pokemon /> : <Navigate to="/login" />} />
                                         <Route path="/battle" element={loggedIn ? <Battlefield /> : <Navigate to="/login" />} />
+                                        <Route path="/pokewho" element={loggedIn ? <PokeWho /> : <Navigate to="/login" />} />
                                         <Route path="*" element={<NaoEncontrada />} />
                                     </Routes>
                                 </Container>

@@ -18,8 +18,8 @@ function Cabecalho() {
                 <CabecalhoLink url="./Favoritos">
                     Favoritos
                 </CabecalhoLink>
-                <CabecalhoLink url="./Battle">
-                    BattleField
+                <CabecalhoLink url="./PokeWho">
+                    PokeWho?
                 </CabecalhoLink>
                 {location.pathname !== '/login' && <Logout />}
             </nav>
