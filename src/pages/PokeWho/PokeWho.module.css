@@ -17,7 +17,7 @@
 
 .grid_item {
     border: 1px solid #ccc;
-    padding: 20px;
+    margin: 20px;
     text-align: center;
 }
 
@@ -30,14 +30,17 @@
     z-index: 1;
 }
 
-.placar {
+.fadded {
+    opacity: 0.5;
+    filter: brightness(0);
+}
+
+.score {
     padding: 1rem;
     border-radius: 30%;
     position: absolute;
     top: 15vh;
     right: 30vw;
-    /* padding: 5px 10px;
-    border-radius: 5px; */
     background-color: rgb(225, 0, 255);
     z-index: 2;
     -webkit-box-shadow: -30px 30px 5px 0px rgba(0, 0, 0, 0.75);
@@ -50,4 +53,50 @@
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.pokeball_button {
+    width: 40px;
+    height: 40px;
+}
+
+.pokemon_image {
+    width: 500px;
+    height: 500px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: white;
+}
+
+.option_button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.option_button:hover {
+    background-color: #f0f0f0;
+}
+
+.option_button.correct {
+    background-color: #32CD32;
+}
+
+.option_button.incorrect {
+    background-color: #FF6347;
+}
+
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
 }
