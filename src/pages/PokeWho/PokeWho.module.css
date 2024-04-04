@@ -12,12 +12,11 @@
     grid-template-rows: auto auto;
     grid-template-columns: auto auto;
     gap: 10px;
-    width: 100%;
+    width: 50%;
 }
 
 .grid_item {
-    border: 1px solid #ccc;
-    margin: 20px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -71,16 +70,28 @@ h2 {
     color: white;
 }
 
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
 .option_button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1.5rem;
     cursor: pointer;
+    width: 10rem;
+    height: 4rem;
 }
 
 .option_button:hover {
-    background-color: #f0f0f0;
+    background-color: rgb(6, 114, 255);
 }
 
 .option_button.correct {
@@ -91,12 +102,10 @@ h2 {
     background-color: #FF6347;
 }
 
-.blink {
-    animation: blink-animation 1s steps(5, start) infinite;
+.option_button_correct {
+    background-color: #32CD32 !important;
 }
 
-@keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
+.option_button_incorrect {
+    background-color: #FF6347 !important;
 }

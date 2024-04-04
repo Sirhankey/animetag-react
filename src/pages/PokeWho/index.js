@@ -10,6 +10,7 @@ function PokeWho() {
     const [selectedOption, setSelectedOption] = useState(null);
     const [revealed, setRevealed] = useState(false);
     const [disableOptions, setDisableOptions] = useState(false);
+    const [correctOption, setCorrectOption] = useState(null);
 
     useEffect(() => {
         if (!pokemonListWithData) return;
@@ -29,6 +30,7 @@ function PokeWho() {
             selectedOptions.push(randomPokemon.name);
             selectedOptions.sort(() => Math.random() - 0.5);
             setOptions(selectedOptions);
+            setCorrectOption(randomPokemon.name);
         }
     }, [score, pokemonListWithData]);
 
@@ -46,7 +48,7 @@ function PokeWho() {
             setPokemon(null);
             setRevealed(false);
             setDisableOptions(false);
-        }, 5000); // Aguarda 5 segundos antes de passar para o próximo pokemon
+        }, 5000); 
     };
 
     return (
@@ -70,9 +72,9 @@ function PokeWho() {
                         <button
                             className={`${styles.option_button} 
                             ${selectedOption === option && !revealed ? styles.blink : ""} 
-                            ${revealed ? option === pokemon.name ?
-                                    styles.option_button_correct :
-                                    styles.option_button_incorrect : ""}`}
+                            ${revealed ? option === correctOption ?
+                                    `${styles.option_button} ${styles.option_button_correct}` :
+                                    `${styles.option_button} ${option === selectedOption ? styles.option_button_incorrect : ""}` : ""}`}
                             onClick={() => handleOptionClick(option)}
                             disabled={disableOptions}
                         >
